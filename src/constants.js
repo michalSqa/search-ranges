@@ -1,0 +1,3 @@
+export const MAX_VALUE = 1000000000;
+
+export const DEFAULT_RANGES_AMOUNT = 1000000;

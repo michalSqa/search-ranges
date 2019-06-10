@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "inquirer": "^6.3.1",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0"
+  },
+  "name": "search-in-ranges-cli",
+  "version": "0.1.0",
+  "description": "Fast search in ranges",
+  "main": "src/index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-jest": "^24.8.0",
+    "figlet": "^1.2.3",
+    "jest-config": "^24.8.0",
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "start-dev:deamon": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel  src/ -d dist/ --watch",
+    "serve": "pm2 start dist/index.js"
+  },
+  "author": "michal skula",
+  "license": "ISC"
+}

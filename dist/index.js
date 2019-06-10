@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _chalk = _interopRequireDefault(require("chalk"));
 
 var _commander = _interopRequireDefault(require("commander"));
@@ -12,6 +10,8 @@ var _terminalKit = require("terminal-kit");
 var _ranges = require("./ranges");
 
 var _constants = require("./constants");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var main_loop = null;
 var program = new _commander["default"].Command();

@@ -4,7 +4,13 @@ Implementation is simple as that. I found on the internet that there are better 
 But from lack of time I sticked to the first that was efficient enough and had tested.
 
 ### Usage
+Installation
+```
+npm install -g serch-ranges
+```
+
+to execute:
  ```sh
- search-ranges -N <amount>
+  search-ranges -N <amount>
  pressing Q will terminate the application. 
  ``` 

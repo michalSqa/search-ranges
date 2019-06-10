@@ -8,7 +8,7 @@
     "commander": "^2.20.0"
   },
   "name": "search-ranges",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fast search in ranges",
   "main": "./dist/index.js",
   "devDependencies": {

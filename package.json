@@ -9,7 +9,7 @@
     "terminal-kit": "^1.28.0"
   },
   "name": "search-ranges",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Fast search in ranges",
   "main": "./dist/index.js",
   "devDependencies": {

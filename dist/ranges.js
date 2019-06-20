@@ -3,9 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.findEnclosed = exports.isEnclosed = exports.generateRanges = exports.generateRange = exports.generateNumberInRange = void 0;
-
-var _constants = require("./constants");
+exports.findEnclosedLoopSorted = exports.findEnclosedLoop = exports.findEnclosed = exports.isEnclosed = exports.generateRanges = exports.generateRange = exports.generateNumberInRange = void 0;
 
 var generateNumberInRange = function generateNumberInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -26,7 +24,7 @@ exports.generateRange = generateRange;
 
 var generateRanges = function generateRanges(min, max, amount) {
   return new Array(amount).fill().map(function () {
-    return generateRange(0, _constants.MAX_VALUE);
+    return generateRange(0, max);
   });
 };
 
@@ -45,3 +43,39 @@ var findEnclosed = function findEnclosed(value, ranges) {
 };
 
 exports.findEnclosed = findEnclosed;
+
+var findEnclosedLoop = function findEnclosedLoop(value, ranges) {
+  var enclosed = 0;
+
+  for (var i = 0; i < ranges.length; i++) {
+    var range = ranges[i];
+
+    if (isEnclosed(value, range)) {
+      enclosed++;
+    }
+  }
+
+  return enclosed;
+};
+
+exports.findEnclosedLoop = findEnclosedLoop;
+
+var findEnclosedLoopSorted = function findEnclosedLoopSorted(value, ranges) {
+  var enclosed = 0;
+
+  for (var i = 0; i < ranges.length; i++) {
+    var range = ranges[i];
+
+    if (value > range.max) {
+      return enclosed;
+    }
+
+    if (isEnclosed(value, range)) {
+      enclosed++;
+    }
+  }
+
+  return enclosed;
+};
+
+exports.findEnclosedLoopSorted = findEnclosedLoopSorted;

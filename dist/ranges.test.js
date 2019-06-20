@@ -34,19 +34,54 @@ describe('Random range generation', function () {
       min: 999999,
       max: 1000000
     });
-  }), it('should enclose 2 ranges', function () {
-    var ranges = [{
-      min: 1,
-      max: 10
-    }, {
-      min: 5,
-      max: 15
-    }, {
-      min: 9,
-      max: 10
-    }];
-    var number = 7;
-    var found = (0, _ranges.findEnclosed)(number, ranges);
-    expect(found).toBe(2);
+  }), describe('Filter function test', function () {
+    it('should enclose 2 ranges', function () {
+      var ranges = [{
+        min: 1,
+        max: 10
+      }, {
+        min: 5,
+        max: 15
+      }, {
+        min: 9,
+        max: 10
+      }];
+      var number = 7;
+      var found = (0, _ranges.findEnclosed)(number, ranges);
+      expect(found).toBe(2);
+    });
+  }), describe('Loop function test', function () {
+    it('should enclose 2 ranges', function () {
+      var ranges = [{
+        min: 1,
+        max: 10
+      }, {
+        min: 5,
+        max: 15
+      }, {
+        min: 9,
+        max: 10
+      }];
+      var number = 7;
+      var found = (0, _ranges.findEnclosedLoop)(number, ranges);
+      expect(found).toBe(2);
+    });
+  });
+  describe('Loop Sorted function test', function () {
+    it('should enclose 2 ranges', function () {
+      var ranges = [{
+        min: 1,
+        max: 10
+      }, {
+        min: 5,
+        max: 15
+      }, {
+        min: 9,
+        max: 10
+      }];
+      var number = 7;
+      var found = (0, _ranges.findEnclosedLoopSorted)(number, ranges);
+      expect(found).toBe(2);
+    });
   });
 });

@@ -1,4 +1,4 @@
-import {generateNumberInRange, generateRange, findEnclosed, isEnclosed} from './ranges';
+import {generateNumberInRange, generateRange, findEnclosed, findEnclosedLoop, findEnclosedLoopSorted, isEnclosed} from './ranges';
 
 describe('Random range generation', () => {
     it('should generate random range object', () => {
@@ -33,10 +33,34 @@ describe('Random range generation', () => {
         expect(generatedRange.max).toBeLessThanOrEqual(max);
         expect(generatedRange).toEqual({min: 999999, max: 1000000});
     }),
-    it('should enclose 2 ranges', () => {
-        const ranges = [{min: 1, max: 10}, {min: 5, max: 15}, {min: 9, max: 10}];
-        const number = 7;
-        const found = findEnclosed(number, ranges);
-        expect(found).toBe(2);
+
+    describe('Filter function test', () => {
+
+        it('should enclose 2 ranges', () => {
+            const ranges = [{min: 1, max: 10}, {min: 5, max: 15}, {min: 9, max: 10}];
+            const number = 7;
+            const found = findEnclosed(number, ranges);
+            expect(found).toBe(2);
+        })
+    }),
+
+    describe('Loop function test', () => {
+
+        it('should enclose 2 ranges', () => {
+            const ranges = [{min: 1, max: 10}, {min: 5, max: 15}, {min: 9, max: 10}];
+            const number = 7;
+            const found = findEnclosedLoop(number, ranges);
+            expect(found).toBe(2);
+        })
+    })
+
+    describe('Loop Sorted function test', () => {
+
+        it('should enclose 2 ranges', () => {
+            const ranges = [{min: 1, max: 10}, {min: 5, max: 15}, {min: 9, max: 10}];
+            const number = 7;
+            const found = findEnclosedLoopSorted(number, ranges);
+            expect(found).toBe(2);
+        })
     })
 })

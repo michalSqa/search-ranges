@@ -6,7 +6,7 @@ But from lack of time I sticked to the first that was efficient enough and had t
 ### Usage
 Installation
 ```
-npm install -g serch-ranges
+npm install -g search-ranges
 ```
 
 to execute:

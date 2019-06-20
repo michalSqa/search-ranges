@@ -23,7 +23,7 @@ program
     .description(chalk.green('App generates set amount of ranges, and infinitly generates random number to check if currently generated number is enclosed by any of ranges.' +
         '\nRunning wihout param will result in default amount of ranges generated.\n Press Q to exit.'))
     .option('-N, --number <amount>', `Set amount of generated ranges (Max: ${DEFAULT_RANGES_AMOUNT})`, DEFAULT_RANGES_AMOUNT)
-    .option('-T, --test', `benchmark for 3 functions used to find ranges: ${chalk.blue('Array.filter')}, ${chalk.blue('for')}, bounded ${chalk.blue('for')} with sorted ranges`)
+    .option('-T, --test', `benchmark for 3 functions used to find ranges: ${chalk.blue('Array.filter')}, ${chalk.blue('for')}, bounded ${chalk.blue('for')} with sorted ranges, runs 1000x each function on the same set of ranges`)
 
 program.parse(process.argv);
 

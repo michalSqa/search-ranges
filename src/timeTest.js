@@ -19,7 +19,7 @@ const testTime = (func, type, config) => {
 };
 
 export const testAllFunctions = () => {
-    const iterations = 10;
+    const iterations = 1000;
     const genRanges = generateRanges(0, MAX_VALUE, DEFAULT_RANGES_AMOUNT);
     genRanges.sort((a, b) => b.max - a.max);
 
